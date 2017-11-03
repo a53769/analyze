@@ -41,9 +41,9 @@ def Gauss(typeName):
     dataSet1 = dataSet[dataSet['type'] == typeName]
     fl = dataSet1['s-length']
     mean = RandomSampling(fl)
-    # sns.distplot(mean,bins=60, rug=True, fit=stats.gamma, norm_hist=False)
+    # sns.distplot(mean,bins=20, rug=True, fit=stats.gamma, norm_hist=False)
 
-    plt.hist(mean, bins=20, color='r', alpha=0.5, rwidth=1, normed=True,histtype='stepfilled')
+    plt.hist(mean, bins=20, color='r', alpha=0.5, rwidth=1, normed=False,histtype='stepfilled')
     plt.legend(loc='best', frameon=False)
     # mu = fl.mean()
     # sigma = fl.std()
@@ -62,89 +62,79 @@ def Gauss(typeName):
     # plt.ylabel('Probability density')
     plt.show()
 
-Gauss("setosa")
+# Gauss("setosa")
 
-# dataSet1 = dataSet[dataSet['type'] == 'setosa']
-# df1 = pandas.DataFrame(dataSet1)
-# dataSet2 = dataSet[dataSet['type'] == 'versicolor']  # Iris-virginica
-# df2 = pandas.DataFrame(dataSet2)
-# dataSet3 = dataSet[dataSet['type'] == 'virginica']
-# df3 = pandas.DataFrame(dataSet3)
-#
-# df = pandas.DataFrame(dataSet)
-#
-# # df4 = pandas.DataFrame(dataSet)
-# # df4.plot.hist(alpha=0.5)
-# # plt.show()
-#
-# # dataType1 = dataSet[dataSet['type'] == 'Iris-setosa']
-# # print(dataType1.shape)
-# #
-# # df = pandas.DataFrame(dataType1)
-# # df = df.cumsum()
-# # df.plot()
-# # plt.show()
-#
-# # 盒子图
-# df1.plot.box()
-# plt.show()
-#
-#
-# # 三种亚种比较
-# plt.subplot(2, 2, 1)
-# plot(df1['s-length'], df1['s-width'], 'b+', label='setosa')
-# plot(df2['s-length'], df2['s-width'], 'r+', label='versicolor')
-# plot(df3['s-length'], df3['s-width'], 'g+', label='virginica')
-# plt.legend(loc='upper left')
-# # plt.title("sepal length & sepal width")  # petal
-# plt.xlabel('sepal length')
-# plt.ylabel('sepal width')
-# # show()
-#
-# plt.subplot(2, 2, 2)
-# plot(df1['s-length'], df1['p-length'], 'b+', label='setosa')
-# plot(df2['s-length'], df2['p-length'], 'r+', label='versicolor')
-# plot(df3['s-length'], df3['p-length'], 'g+', label='virginica')
-# plt.legend(loc='upper left')
-# # plt.title("sepal length & petal length")  # petal
-# plt.xlabel('sepal length')
-# plt.ylabel('petal length')
-# # show()
-#
-# plt.subplot(2, 2, 3)
-# plot(df1['s-length'], df1['p-width'], 'b+', label='setosa')
-# plot(df2['s-length'], df2['p-width'], 'r+', label='versicolor')
-# plot(df3['s-length'], df3['p-width'], 'g+', label='virginica')
-# plt.legend(loc='upper left')
-# # plt.title("sepal length & petal width")  # petal
-# plt.xlabel('sepal length')
-# plt.ylabel('petal width')
-# # show()
-#
-# plt.subplot(2, 2, 4)
-# plot(df1['p-length'], df1['p-width'], 'b+', label='setosa')
-# plot(df2['p-length'], df2['p-width'], 'r+', label='versicolor')
-# plot(df3['p-length'], df3['p-width'], 'g+', label='virginica')
-# plt.legend(loc='upper left')
-# # plt.title("petal length & petal width")  # petal
-# plt.xlabel('petal length')
-# plt.ylabel('petal width')
-# # show()
-#
-# plt.show()
-#
-#
-# from pandas.plotting import autocorrelation_plot
-# auto = pandas.Series(dataSet1['s-length'])
-# autocorrelation_plot(auto)
-# plt.show()
-#
-#
-# from pandas.plotting import radviz
-# radviz(dataSet,'type')
-# plt.show()
-#
+dataSet1 = dataSet[dataSet['type'] == 'setosa']
+df1 = pandas.DataFrame(dataSet1)
+dataSet2 = dataSet[dataSet['type'] == 'versicolor']  # Iris-virginica
+df2 = pandas.DataFrame(dataSet2)
+dataSet3 = dataSet[dataSet['type'] == 'virginica']
+df3 = pandas.DataFrame(dataSet3)
 
-#
-# sns.pairplot(dataSet, hue='type', size=3, diag_kind='kde')
-# plt.show()
+df = pandas.DataFrame(dataSet)
+
+
+
+# 盒子图
+df1.plot.box()
+plt.show()
+
+
+# 三种亚种比较
+plt.subplot(2, 2, 1)
+plot(df1['s-length'], df1['s-width'], 'b+', label='setosa')
+plot(df2['s-length'], df2['s-width'], 'r+', label='versicolor')
+plot(df3['s-length'], df3['s-width'], 'g+', label='virginica')
+plt.legend(loc='upper left')
+# plt.title("sepal length & sepal width")  # petal
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+# show()
+
+plt.subplot(2, 2, 2)
+plot(df1['s-length'], df1['p-length'], 'b+', label='setosa')
+plot(df2['s-length'], df2['p-length'], 'r+', label='versicolor')
+plot(df3['s-length'], df3['p-length'], 'g+', label='virginica')
+plt.legend(loc='upper left')
+# plt.title("sepal length & petal length")  # petal
+plt.xlabel('sepal length')
+plt.ylabel('petal length')
+# show()
+
+plt.subplot(2, 2, 3)
+plot(df1['s-length'], df1['p-width'], 'b+', label='setosa')
+plot(df2['s-length'], df2['p-width'], 'r+', label='versicolor')
+plot(df3['s-length'], df3['p-width'], 'g+', label='virginica')
+plt.legend(loc='upper left')
+# plt.title("sepal length & petal width")  # petal
+plt.xlabel('sepal length')
+plt.ylabel('petal width')
+# show()
+
+plt.subplot(2, 2, 4)
+plot(df1['p-length'], df1['p-width'], 'b+', label='setosa')
+plot(df2['p-length'], df2['p-width'], 'r+', label='versicolor')
+plot(df3['p-length'], df3['p-width'], 'g+', label='virginica')
+plt.legend(loc='upper left')
+# plt.title("petal length & petal width")  # petal
+plt.xlabel('petal length')
+plt.ylabel('petal width')
+# show()
+
+plt.show()
+
+
+from pandas.plotting import autocorrelation_plot
+auto = pandas.Series(dataSet1['s-length'])
+autocorrelation_plot(auto)
+plt.show()
+
+
+from pandas.plotting import radviz
+radviz(dataSet,'type')
+plt.show()
+
+
+
+sns.pairplot(dataSet, hue='type', size=3, diag_kind='kde')
+plt.show()
