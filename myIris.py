@@ -15,7 +15,7 @@ import seaborn as sns
 import statistics
 from pylab import plot
 
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+# url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 
 from numpy import genfromtxt, zeros
 localfn='D://workspace/analyze/iris.csv'
@@ -41,7 +41,7 @@ def Gauss(typeName):
     dataSet1 = dataSet[dataSet['type'] == typeName]
     fl = dataSet1['s-length']
     mean = RandomSampling(fl)
-    # sns.distplot(mean,bins=20, rug=True, fit=stats.gamma, norm_hist=False)
+    sns.distplot(mean,bins=20, rug=True, fit=stats.gamma, norm_hist=False)
 
     plt.hist(mean, bins=20, color='r', alpha=0.5, rwidth=1, normed=False,histtype='stepfilled')
     plt.legend(loc='best', frameon=False)
